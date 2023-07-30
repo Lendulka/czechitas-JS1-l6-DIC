@@ -1,0 +1,166 @@
+/* Google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@500&family=Lora&family=Open+Sans:wght@300;400&family=Sevillana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@500&family=Lora:wght@400;600;700&family=Open+Sans:wght@300;400&family=Sevillana&display=swap');
+
+/* nejsme vcerejsi, pouzivame moderni a intuitivni box model */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+:root {
+  --color-primary: #09155c;
+  --color-secondary: #fffb00;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  padding: 1rem;
+  min-height: 100vh;
+  background-color: #72A0C1;
+  background-image: url("./img/Commission.jpg");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-secondary);
+  text-shadow: 1px 1px 1px #e6bc03;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form__control {
+  max-width: 80rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: min-content;
+  grid-template-rows: repeat(2, min-content);
+  justify-content: center;
+  align-content: center;
+  background-color: #333850;
+  opacity: 0.7;
+  min-height: 100vh;
+}
+
+label {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.state,
+.dic {
+  height: 2rem;
+  width: 13rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.dic:-webkit-autofill {
+  -webkit-text-fill-color: var(--color-primary);
+}
+
+.dic--shorted,
+.display-none {
+  display: none;
+}
+
+.dic--shorted {
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+#button-submit {
+  width: 6rem;
+  height: 2rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+#button-submit:hover {
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+  font-weight: 800;
+}
+
+.form__result--ok {
+  color: rgb(120, 252, 32);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.form__result--wrong {
+  color: #ff6600;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-position: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+  }
+
+  #VAT-validation {
+    display: grid;
+    grid-template-columns: max-content 3rem max-content;
+    grid-template-rows: repeat(4, max-content);
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .dic--shorted,
+  .display-none {
+    display: flex;
+  }
+
+  .dic--shorted {
+    width: 100%;
+    height: 100%;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .display-none {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .state,
+  .dic {
+    margin-bottom: 0;
+  }
+}

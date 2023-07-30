@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="form__control">
+        <h1>VAT number validation</h1>
+        <form id="VAT-validation">
+            <label for="state">Členský stát:</label>
+            <input type="text" id="none-1" class="display-none" />
+            <select name="state" id="state" class="state">
+                <option value="czechia">CZ-Česká republika</option>
+                <option value="germany">DE-Německo</option>
+                <option value="poland">PL-Polsko</option>
+                <option value="slovakia">SK-Slovenská republika</option>
+                <option value="austria">AT-Rakousko</option>
+            </select>
+
+            <label for="dic">DIČ:</label>
+            <input type="text" id="dic-short-1" class="dic--shorted" />
+            <input type="text" id="dic" class="dic" required />
+
+            <label for="state-requested">Členský stát žadatele:</label>
+            <input type="text" id="none-2" class="display-none" />
+            <select name="state-requested" id="state-requested" class="state">
+                <option value="czechia">CZ-Česká republika</option>
+                <option value="germany">DE-Německo</option>
+                <option value="poland">PL-Polsko</option>
+                <option value="slovakia">SK-Slovenská republika</option>
+                <option value="austria">AT-Rakousko</option>
+            </select>
+
+            <label for="dic-requested">DIČ:</label>
+            <input type="text" id="dic-short-2" class="dic--shorted" />
+            <input type="text" id="dic-requested" class="dic" pattern="[0-9]{8,10}" maxlength="10" required />
+
+            <div class="button__control">
+                <button type="submit" id="button-submit">Ověřit</button>
+            </div>
+        </form>
+
+        <p class="form__result"></p>
+    </div>
+
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
