@@ -90,21 +90,24 @@ const checkVAT = (e) => {
             result = austria(dicValue)
         }
     } else {
-        formResultElm.textContent = 'Chybně zadané číslo!'
+        formResultElm.classList.remove('form__result--ok')
         formResultElm.classList.add('form__result--wrong')
+        formResultElm.textContent = 'Chybně zadané číslo!'
         result = null
         dicElm.value = ''
         dicReqElm.value = ''
     }
 
     if (result === true) {
-        formResultElm.textContent = 'Ano, platné DIČ'
+        formResultElm.classList.remove('form__result--wrong')
         formResultElm.classList.add('form__result--ok')
+        formResultElm.textContent = 'Ano, platné DIČ'
         dicElm.value = ''
         dicReqElm.value = ''
     } else if (result === false) {
-        formResultElm.textContent = 'Ne, neplatné číslo DPH pro přeshraniční transakce v rámci EU'
+        formResultElm.classList.remove('form__result--ok')
         formResultElm.classList.add('form__result--wrong')
+        formResultElm.textContent = 'Ne, neplatné číslo DPH pro přeshraniční transakce v rámci EU'
         dicElm.value = ''
         dicReqElm.value = ''
     }
